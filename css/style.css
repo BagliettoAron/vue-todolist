@@ -1,0 +1,54 @@
+/* RESET */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+
+.header-logo{
+    margin-top: 5rem;
+    text-align: center;
+    font-size: 3rem;
+}
+
+/* MAIN */
+
+/* filter section */
+.filters,
+.to-do-list{
+    max-width: 70%;
+    min-width: 20rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.filters__item input,
+.filters__item button{
+    padding: .5rem 2rem;
+    border-radius: .5rem;
+    border: 1px solid lightgray ;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.295);
+    margin: 1rem;
+}
+
+/* To Do Section */
+.to-do-list{
+    background-color: rgba(211, 211, 211, 0.226);
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.to-do-list__list li{
+    padding: 1rem;
+    list-style: none;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.line-through-text{
+    text-decoration: line-through;
+}

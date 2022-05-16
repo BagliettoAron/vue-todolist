@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do LIst</title>
+
+    <!-- LINK -->
+
+    <!-- style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    
+    <div class="" id="root">
+        <!-- HEADER -->
+        <header>
+            <h1 class="header-logo">Boolean</h1>
+        </header>
+        <!-- /HEADER -->
+
+        <!-- MAIN -->
+        <!-- filters section -->
+        <main>
+            <section class="filters">
+                <div class="filters__item">
+                    <input 
+                    type="text" 
+                    placeholder="New To Do" 
+                    v-model="newToDo" 
+                    @keyup.enter="addToDo">
+                    <button @click="addToDo"> Add </button>
+                </div>
+
+                <div class="filters__item">
+                    <label for="filter-text">To filter :</label>
+                    <input type="filter-text" 
+                    placeholder="Type to filter"  
+                    @keyup="startSearch" 
+                    v-model="searchList">
+                </div>
+            </section>
+
+            <!-- to do list section -->
+            <section class="to-do-list">
+               <ul class="to-do-list__list" 
+               v-for="(item, index) in toDo">
+                   <li v-if="item.done">
+                        {{ index+1 }} - {{ item.text }}
+                       <div class="to-do-list__cancel-icon">
+                        <i class="fas fa-trash-alt" @click="removeThisItem(index)">
+                        </i>
+                       </div>
+                    </li>
+               </ul>
+
+            </section>
+            </main>
+        <!-- /MAIN -->
+
+
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
